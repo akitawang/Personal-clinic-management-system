@@ -171,7 +171,7 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-12 text-center">
-                        2019 © PCMS. - 个人诊所管理系统   软件工程项目</a>
+                        2019 © PCMS. - 个人诊所管理系统   软件工程项目
                     </div>
                 </div>
             </div>
