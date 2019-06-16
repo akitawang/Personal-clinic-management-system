@@ -40,6 +40,9 @@ public class cases {
 		Case_item = case_item;
 		Case_pre = case_pre;
 	}
+	public cases() {
+		super();
+	}
 	public int getCase_num() {
 		return Case_num;
 	}

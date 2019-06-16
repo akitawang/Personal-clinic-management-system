@@ -22,6 +22,10 @@ public class doctor {
 		Doctor_id = doctor_id;
 		Doctor_phone = doctor_phone;
 	}
+	public doctor() {
+		super();
+	}
+
 	public String getDoctor_name() {
 		return Doctor_name;
 	}

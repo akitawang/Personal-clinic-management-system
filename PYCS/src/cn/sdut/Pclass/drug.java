@@ -33,6 +33,9 @@ public class drug {
 		Drug_expdate = drug_expdate;
 	}
 	
+	public drug() {
+		super();	}
+
 	public int getDrug_id() {
 		return Drug_id;
 	}

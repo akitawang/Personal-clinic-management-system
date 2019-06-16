@@ -11,6 +11,10 @@ public class admin {
 		Admin_password = admin_password;
 	}
 
+	public admin() {
+		super();
+	}
+
 	public String getAdmin_num() {
 		return Admin_num;
 	}

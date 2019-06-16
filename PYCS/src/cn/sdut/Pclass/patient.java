@@ -31,6 +31,9 @@ public class patient {
 		Patient_fam = patient_fam;
 		Patient_list = patient_list;
 	}
+	public patient() {
+		super();
+	}
 	public String getPatient_name() {
 		return Patient_name;
 	}
