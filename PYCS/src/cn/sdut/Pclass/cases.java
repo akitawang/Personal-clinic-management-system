@@ -4,27 +4,27 @@ import java.sql.Date;
 
 public class cases {
 	
-	private int Case_num;          //´¦·½±àºÅ
-	private String Case_name;      //¿Í»§ÐÕÃû
-	private String Case_sex;       //¿Í»§ÐÔ±ð
-	private String Case_birth;     //¿Í»§³öÉúÈÕÆÚ
-	private String Case_phone;     //¿Í»§µç»°ºÅÂë
-	private String Case_weight;    //¿Í»§ÌåÖØ
-	private String Case_address;   //¿Í»§¼ÒÍ¥×¡Ö·
-	private String Case_allergy;   //¿Í»§¹ýÃôÊ·
-	private String Case_height;    //¿Í»§Éí¸ß
-	private String Case_type;      //¿Í»§ÑªÐÍ
-	private String Case_symptom;   //¿Í»§Ö¢×´
-	private String Case_info;      //Õï¶ÏÐÅÏ¢
-	private String Case_advice;    //Ò½Öö
-	private String Case_item;      //¼ì²éÏîÄ¿
-	private String Case_pre;       //´¦·½
 	
-	public cases(int case_num, String case_name, String case_sex, String case_birth, String case_phone,
+	private String Case_name;      //ï¿½Í»ï¿½ï¿½ï¿½ï¿½ï¿½
+	private String Case_sex;       //ï¿½Í»ï¿½ï¿½Ô±ï¿½
+	private String Case_birth;     //ï¿½Í»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	private String Case_phone;     //ï¿½Í»ï¿½ï¿½ç»°ï¿½ï¿½ï¿½ï¿½
+	private String Case_weight;    //ï¿½Í»ï¿½ï¿½ï¿½ï¿½ï¿½
+	private String Case_address;   //ï¿½Í»ï¿½ï¿½ï¿½Í¥×¡Ö·
+	private String Case_allergy;   //ï¿½Í»ï¿½ï¿½ï¿½ï¿½ï¿½Ê·
+	private String Case_height;    //ï¿½Í»ï¿½ï¿½ï¿½ï¿½
+	private String Case_type;      //ï¿½Í»ï¿½Ñªï¿½ï¿½
+	private String Case_symptom;   //ï¿½Í»ï¿½Ö¢×´
+	private String Case_info;      //ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢
+	private String Case_advice;    //Ò½ï¿½ï¿½
+	private String Case_item;      //ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿
+	private String Case_pre;       //ï¿½ï¿½ï¿½ï¿½
+	
+	public cases(String case_name, String case_sex, String case_birth, String case_phone,
 			String case_weight, String case_address, String case_allergy, String case_height, String case_type,
 			String case_symptom, String case_info, String case_advice, String case_item, String case_pre) {
 		super();
-		Case_num = case_num;
+		
 		Case_name = case_name;
 		Case_sex = case_sex;
 		Case_birth = case_birth;
@@ -43,12 +43,7 @@ public class cases {
 	public cases() {
 		super();
 	}
-	public int getCase_num() {
-		return Case_num;
-	}
-	public void setCase_num(int case_num) {
-		Case_num = case_num;
-	}
+	
 	public String getCase_name() {
 		return Case_name;
 	}
