@@ -18,7 +18,8 @@
                         <li class="dropdown notification-list">
                             <a class="nav-link dropdown-toggle nav-user" data-toggle="dropdown" href="#" role="button"
                                 aria-haspopup="false" aria-expanded="false">
-                                <img src="../assets/images/users/avatar-1.jpg" alt="user" class="rounded-circle"> <span class="ml-1">Agnes K <i class="mdi mdi-chevron-down"></i> </span>
+                                <img src="" alt="user" class="rounded-circle"> <span class="ml-1">Agnes K <i class="mdi mdi-chevron-down"></i> </span>
+                            	<!-- 插入用户图片及用户名 -->
                             </a>
                             <div class="dropdown-menu dropdown-menu-right dropdown-menu-animated profile-dropdown ">
                                 <!-- item-->
@@ -79,7 +80,7 @@
                     <ul class="navigation-menu">
 
                             <li class="has-submenu">
-                                <a href="index.html"><i class="mdi mdi-view-dashboard"></i>主页</a>
+                                <a href="index.jsp"><i class="mdi mdi-view-dashboard"></i>主页</a>
                             </li>
 
                             <li class="has-submenu">
@@ -87,7 +88,7 @@
  
                                 <ul class="submenu">
                                     <li>
-                                        <li><a href="pages-invoice.html">门诊处方</a></li>
+                                        <li><a href="create_prescription.jsp">门诊处方</a></li>
                                     </li>      
                                     <li class="has-submenu">
                                         <a href="#">挂号管理</a>
@@ -171,7 +172,7 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-12 text-center">
-                        2019 © PCMS. - 个人诊所管理系统   软件工程项目</a>
+                        2019 © PCMS. - 个人诊所管理系统   软件工程项目
                     </div>
                 </div>
             </div>
