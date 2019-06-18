@@ -88,7 +88,7 @@
  
                                 <ul class="submenu">
                                     <li>
-                                        <li><a href="create_prescription.jsp">门诊处方</a></li>
+                                        <li><a href="create_prescription.jsp">病例处方</a></li>
                                     </li>      
                                     <li class="has-submenu">
                                         <a href="#">挂号管理</a>
@@ -101,7 +101,6 @@
                                     <li class="has-submenu">
                                         <a href="#">病例管理</a>
                                         <ul class="submenu">
-                                            <li><a href="chart-flot.html">病例添加</a></li>
                                             <li><a href="chart-chartist.html">病例删除</a></li>
                                             <li><a href="chart-chartjs.html">病例信息修改</a></li>
                                             <li><a href="chart-chartjs.html">病例信息查询</a></li>

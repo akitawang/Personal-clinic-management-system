@@ -4,20 +4,16 @@ import java.sql.*;
 
 public class patient {
 	
-	private String Patient_name;     //¿Í»§ĞÕÃû
-	private String Patient_sex;      //¿Í»§ĞÔ±ğ
-	private String Patient_birth;    //¿Í»§³öÉúÈÕÆÚ
-	private String Patient_weight;   //¿Í»§ÌåÖØ
-	private String Patient_id;       //¿Í»§Éí·İÖ¤ºÅ
-	private String Patient_phone;    //¿Í»§µç»°ºÅÂë
-	private String Patient_address;  //¿Í»§¼ÒÍ¥×¡Ö·
-	private String Patient_history;  //¿Í»§¼ÈÍùÊ·
-	private String Patient_pers;     //¿Í»§¸öÈËÊ·
-	private String Patient_fam;      //¿Í»§¼Ò×åÊ·
-	private String Patient_list;     //¿Í»§ÅÅ¶ÓĞòºÅ
+	private String Patient_name;     //ï¿½Í»ï¿½ï¿½ï¿½ï¿½ï¿½
+	private String Patient_sex;      //ï¿½Í»ï¿½ï¿½Ô±ï¿½
+	private String Patient_birth;    //ï¿½Í»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	private String Patient_weight;   //ï¿½Í»ï¿½ï¿½ï¿½ï¿½ï¿½
+	private String Patient_id;       //ï¿½Í»ï¿½ï¿½ï¿½ï¿½Ö¤ï¿½ï¿½
+	private String Patient_phone;    //ï¿½Í»ï¿½ï¿½ç»°ï¿½ï¿½ï¿½ï¿½
+	private String Patient_address;  //ï¿½Í»ï¿½ï¿½ï¿½Í¥×¡Ö·
+	private String Patient_list;     //ï¿½Í»ï¿½ï¿½Å¶ï¿½ï¿½ï¿½ï¿½
 	public patient(String patient_name, String patient_sex, String patient_birth, String patient_weight,
-			String patient_id, String patient_phone, String patient_address, String patient_history,
-			String patient_pers, String patient_fam, String patient_list) {
+			String patient_id, String patient_phone, String patient_address, String patient_list) {
 		super();
 		Patient_name = patient_name;
 		Patient_sex = patient_sex;
@@ -26,9 +22,7 @@ public class patient {
 		Patient_id = patient_id;
 		Patient_phone = patient_phone;
 		Patient_address = patient_address;
-		Patient_history = patient_history;
-		Patient_pers = patient_pers;
-		Patient_fam = patient_fam;
+		
 		Patient_list = patient_list;
 	}
 	public patient() {
@@ -76,24 +70,8 @@ public class patient {
 	public void setPatient_address(String patient_address) {
 		Patient_address = patient_address;
 	}
-	public String getPatient_history() {
-		return Patient_history;
-	}
-	public void setPatient_history(String patient_history) {
-		Patient_history = patient_history;
-	}
-	public String getPatient_pers() {
-		return Patient_pers;
-	}
-	public void setPatient_pers(String patient_pers) {
-		Patient_pers = patient_pers;
-	}
-	public String getPatient_fam() {
-		return Patient_fam;
-	}
-	public void setPatient_fam(String patient_fam) {
-		Patient_fam = patient_fam;
-	}
+	
+	
 	public String getPatient_list() {
 		return Patient_list;
 	}

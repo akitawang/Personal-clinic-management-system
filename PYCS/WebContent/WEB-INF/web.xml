@@ -9,4 +9,14 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
+  <servlet>
+    <description></description>
+    <display-name>Create_prescription_servlet</display-name>
+    <servlet-name>Create_prescription_servlet</servlet-name>
+    <servlet-class>cn.sudt.servlet.Create_prescription_servlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Create_prescription_servlet</servlet-name>
+    <url-pattern>/Create_prescription_servlet</url-pattern>
+  </servlet-mapping>
 </web-app>

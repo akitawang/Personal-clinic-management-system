@@ -18,7 +18,7 @@ public class PatientDAOImpl implements PatientDAO {
 
 	public boolean add(patient Patient) {
 		// TODO Auto-generated method stub
-		String sql = "insert into patient(Patient_name,Patient_sex,Patient_birth,Patient_weight,Patient_id,Patient_phone,Patient_address,Patient_history,Patient_pers,Patient_fam,Patient_list)values(?,?,?,?,?,?,?,?,?,?,?)";
+		String sql = "insert into patient(Patient_name,Patient_sex,Patient_birth,Patient_weight,Patient_id,Patient_phone,Patient_address,Patient_list)values(?,?,?,?,?,?,?,?)";
 		
 		Connection conn=null;
 		PreparedStatement stmt=null;
@@ -39,10 +39,8 @@ public class PatientDAOImpl implements PatientDAO {
 			stmt.setString(5, Patient.getPatient_id());
 			stmt.setString(6, Patient.getPatient_phone());
 			stmt.setString(7, Patient.getPatient_address());
-			stmt.setString(1, Patient.getPatient_history());
-			stmt.setString(2, Patient.getPatient_pers());
-			stmt.setString(3, Patient.getPatient_fam());
-			stmt.setString(4, Patient.getPatient_list());
+		
+			stmt.setString(8, Patient.getPatient_list());
 			
 			int rows  = stmt.executeUpdate();
 
@@ -72,7 +70,7 @@ public List<patient> getAllpatient() {
 		ResultSet rs =null;
 		
 
-		String sql = "select  Patient_name,Patient_sex,Patient_birth,Patient_weight,Patient_id,Patient_phone,Patient_address,Patient_history,Patient_pers,Patient_fam,Patient_list from patient  ";
+		String sql = "select  Patient_name,Patient_sex,Patient_birth,Patient_weight,Patient_id,Patient_phone,Patient_address,Patient_list from patient  ";
 		
 		//System.out.println(sql);
 		
@@ -90,12 +88,9 @@ public List<patient> getAllpatient() {
 				
 			user.setPatient_address(rs.getString("Patient_address"));
 			user.setPatient_birth(rs.getString("Patient_birth"));
-			user.setPatient_fam(rs.getString("Patient_fam"));
-			user.setPatient_history(rs.getString("atient_history"));
 			user.setPatient_id(rs.getString("Patient_id"));
 			user.setPatient_list(rs.getString("Patient_list"));
 			user.setPatient_name(rs.getString("Patient_name"));
-			user.setPatient_pers(rs.getString("Patient_pers"));
 			user.setPatient_phone(rs.getString("Patient_phone"));
 			user.setPatient_sex(rs.getString("Patient_sex"));
 			user.setPatient_weight(rs.getString("Patient_weight"));
@@ -175,7 +170,7 @@ public boolean delete(int Patient_name) {
 
 public boolean update(patient Patient) {
 	
-	String sql = "update patient set Patient_sex=?,Patient_birth=?,Patient_weight=?,Patient_id=?,Patient_phone=?,Patient_address=?,Patient_history=?,Patient_pers=?,Patient_fam=?,Patient_list=? where Patient_name=?";
+	String sql = "update patient set Patient_sex=?,Patient_birth=?,Patient_weight=?,Patient_id=?,Patient_phone=?,Patient_address=?,Patient_list=? where Patient_name=?";
 	
 	Connection conn=null;
 	PreparedStatement stmt=null;
@@ -196,9 +191,6 @@ public boolean update(patient Patient) {
 		stmt.setString(4, Patient.getPatient_id());
 		stmt.setString(5, Patient.getPatient_phone());
 		stmt.setString(6, Patient.getPatient_address());
-		stmt.setString(7, Patient.getPatient_history());
-		stmt.setString(8, Patient.getPatient_pers());
-		stmt.setString(9, Patient.getPatient_fam());
 		stmt.setString(10, Patient.getPatient_list());
 		stmt.setString(11, Patient.getPatient_name());
 
