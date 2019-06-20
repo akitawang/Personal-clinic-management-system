@@ -2,6 +2,8 @@ package cn.sudt.servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -51,6 +53,12 @@ public class Create_prescription_servlet extends HttpServlet {
 		String Case_item = request.getParameter("item");
 		String Case_pre = request.getParameter("pre");
 		
+		Date t = new Date();
+
+		SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm");
+		String dated = df.format(t);
+		
+		
 		/* 查看输入情况
 		 * System.out.println(Case_name);
 		 * System.out.println(Case_sex);
@@ -70,6 +78,7 @@ public class Create_prescription_servlet extends HttpServlet {
 		
 		CasesDAOImpl impl = new CasesDAOImpl();
 		cases data = new cases();
+		data.setCase_currentdate(dated);
 		data.setCase_name(Case_name);
 		data.setCase_phone(Case_phone);
 		data.setCase_sex(Case_sex);

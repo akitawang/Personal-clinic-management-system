@@ -80,7 +80,7 @@
                     <ul class="navigation-menu">
 
                             <li class="has-submenu">
-                                <a href="index.jsp"><i class="mdi mdi-view-dashboard"></i>主页</a>
+                                <a href="/PYCS/Mainpages/index.jsp"><i class="mdi mdi-view-dashboard"></i>主页</a>
                             </li>
 
                             <li class="has-submenu">
@@ -88,7 +88,7 @@
  
                                 <ul class="submenu">
                                     <li>
-                                        <li><a href="create_prescription.jsp">病例处方</a></li>
+                                        <li><a href="/PYCS/Mainpages/create_prescription.jsp">病例处方</a></li>
                                     </li>      
                                     <li class="has-submenu">
                                         <a href="#">挂号管理</a>
@@ -97,15 +97,11 @@
                                             <li><a href="chart-chartist.html">当前排队信息</a></li>
                                             <li><a href="chart-chartjs.html">挂号删除</a></li>
                                         </ul>
-                                    </li>    
-                                    <li class="has-submenu">
-                                        <a href="#">病例管理</a>
-                                        <ul class="submenu">
-                                            <li><a href="chart-chartist.html">病例删除</a></li>
-                                            <li><a href="chart-chartjs.html">病例信息修改</a></li>
-                                            <li><a href="chart-chartjs.html">病例信息查询</a></li>
-                                        </ul>
-                                    </li>      
+                                    </li>   
+                                    <li>
+                                        <li><a href="/PYCS/Allcases_search">病例管理</a></li>
+                                    </li>  
+                                      
                                 </ul>
                             </li>
 

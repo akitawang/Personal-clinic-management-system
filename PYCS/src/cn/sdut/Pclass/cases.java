@@ -1,10 +1,10 @@
 package cn.sdut.Pclass;
 
-import java.sql.Date;
+
 
 public class cases {
 	
-	
+	private String Case_num;
 	private String Case_name;      //�ͻ�����
 	private String Case_sex;       //�ͻ��Ա�
 	private String Case_birth;     //�ͻ���������
@@ -19,12 +19,17 @@ public class cases {
 	private String Case_advice;    //ҽ��
 	private String Case_item;      //�����Ŀ
 	private String Case_pre;       //����
+	private String Case_currentdate;
 	
-	public cases(String case_name, String case_sex, String case_birth, String case_phone,
+	
+	
+	
+	public cases(String case_num, String case_name, String case_sex, String case_birth, String case_phone,
 			String case_weight, String case_address, String case_allergy, String case_height, String case_type,
-			String case_symptom, String case_info, String case_advice, String case_item, String case_pre) {
+			String case_symptom, String case_info, String case_advice, String case_item, String case_pre,
+			String case_currentdate) {
 		super();
-		
+		Case_num = case_num;
 		Case_name = case_name;
 		Case_sex = case_sex;
 		Case_birth = case_birth;
@@ -39,17 +44,35 @@ public class cases {
 		Case_advice = case_advice;
 		Case_item = case_item;
 		Case_pre = case_pre;
+		Case_currentdate = case_currentdate;
 	}
+
+
 	public cases() {
 		super();
 	}
 	
+	
+	public String getCase_num() {
+		return Case_num;
+	}
+
+
+	public void setCase_num(String case_num) {
+		Case_num = case_num;
+	}
+
+
 	public String getCase_name() {
 		return Case_name;
 	}
+
+
 	public void setCase_name(String case_name) {
 		Case_name = case_name;
 	}
+
+
 	public String getCase_sex() {
 		return Case_sex;
 	}
@@ -128,5 +151,15 @@ public class cases {
 	public void setCase_pre(String case_pre) {
 		Case_pre = case_pre;
 	}
+	public String getCase_currentdate() {
+		return Case_currentdate;
+	}
+	public void setCase_currentdate(String case_currentdate) {
+		Case_currentdate = case_currentdate;
+	}
+	
+	
+	
+	
 
 }
