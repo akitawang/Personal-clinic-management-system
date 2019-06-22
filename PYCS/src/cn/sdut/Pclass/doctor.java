@@ -5,13 +5,13 @@ import java.sql.Date;
 public class doctor {
 	
 	private String Doctor_name;         //医生姓名
-	private int Doctor_num;             //医生编号。登录账号
+	private String Doctor_num;             //医生编号。登录账号
 	private String Doctor_password;     //医生登录密码
 	private String Doctor_dep;          //医生部门
 	private String Doctor_time;           //医生入职时间
 	private String Doctor_id;           //医生身份证号
 	private String Doctor_phone;        //医生电话
-	public doctor(String doctor_name, int doctor_num, String doctor_password, String doctor_dep, String doctor_time,
+	public doctor(String doctor_name, String doctor_num, String doctor_password, String doctor_dep, String doctor_time,
 			String doctor_id, String doctor_phone) {
 		super();
 		Doctor_name = doctor_name;
@@ -32,10 +32,10 @@ public class doctor {
 	public void setDoctor_name(String doctor_name) {
 		Doctor_name = doctor_name;
 	}
-	public int getDoctor_num() {
+	public String getDoctor_num() {
 		return Doctor_num;
 	}
-	public void setDoctor_num(int doctor_num) {
+	public void setDoctor_num(String doctor_num) {
 		Doctor_num = doctor_num;
 	}
 	public String getDoctor_password() {

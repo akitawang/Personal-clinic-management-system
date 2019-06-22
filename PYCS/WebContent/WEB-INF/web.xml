@@ -79,4 +79,54 @@
     <servlet-name>Case_rectify_t</servlet-name>
     <url-pattern>/Case_rectify_t</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>AddDoctor</display-name>
+    <servlet-name>AddDoctor</servlet-name>
+    <servlet-class>cn.sdut.servlet.AddDoctor</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AddDoctor</servlet-name>
+    <url-pattern>/AddDoctor</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Admin_login</display-name>
+    <servlet-name>Admin_login</servlet-name>
+    <servlet-class>cn.sdut.servlet.Admin_login</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Admin_login</servlet-name>
+    <url-pattern>/Admin_login</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>DeleteDoctor</display-name>
+    <servlet-name>DeleteDoctor</servlet-name>
+    <servlet-class>cn.sdut.servlet.DeleteDoctor</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DeleteDoctor</servlet-name>
+    <url-pattern>/DeleteDoctor</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>UpdateDoctor</display-name>
+    <servlet-name>UpdateDoctor</servlet-name>
+    <servlet-class>cn.sdut.servlet.UpdateDoctor</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UpdateDoctor</servlet-name>
+    <url-pattern>/UpdateDoctor</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Admin_out</display-name>
+    <servlet-name>Admin_out</servlet-name>
+    <servlet-class>cn.sdut.servlet.Admin_out</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Admin_out</servlet-name>
+    <url-pattern>/Admin_out</url-pattern>
+  </servlet-mapping>
 </web-app>

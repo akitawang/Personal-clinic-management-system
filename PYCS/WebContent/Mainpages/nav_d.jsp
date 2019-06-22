@@ -1,5 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
+<%@ page import="java.util.*"   %> 
+<%@ page import="cn.sdut.util.*"   %> 
+<%@ page import="cn.sdut.Pclass.*"   %> 
+<%@ page import="cn.sdut.dao.*"   %> 
+<%@ page import="cn.sdut.dao.impl.*"   %>  
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,6 +12,18 @@
 <title>Insert title here</title>
 </head>
 <body>
+
+
+<%
+	
+// 	List<Book> cart = (List<Book>) session.getAttribute("cart");
+
+	doctor user1 = (doctor)session.getAttribute("user1");
+%>
+
+
+
+
 <!-- Navigation Bar-->
         <header id="topnav">
             <nav class="navbar-custom">
@@ -18,7 +35,7 @@
                         <li class="dropdown notification-list">
                             <a class="nav-link dropdown-toggle nav-user" data-toggle="dropdown" href="#" role="button"
                                 aria-haspopup="false" aria-expanded="false">
-                                <img src="" alt="user" class="rounded-circle"> <span class="ml-1">Agnes K <i class="mdi mdi-chevron-down"></i> </span>
+                                <img src="" alt="user" class="rounded-circle"> <span class="ml-1"> <%=user1.getDoctor_name()%> <i class="mdi mdi-chevron-down"></i> </span>
                             	<!-- 插入用户图片及用户名 -->
                             </a>
                             <div class="dropdown-menu dropdown-menu-right dropdown-menu-animated profile-dropdown ">
@@ -45,8 +62,8 @@
                                 
     
                                 <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                    <i class="dripicons-power"></i> <span>注销</span>
+                                <a href="../loginpages/login.jsp;" class="dropdown-item notify-item">
+                                 <i class="dripicons-power"></i> <span>注销</span>
                                 </a>
     
                             </div>
@@ -80,7 +97,7 @@
                     <ul class="navigation-menu">
 
                             <li class="has-submenu">
-                                <a href="/PYCS/Mainpages/index_doctor.jsp"><i class="mdi mdi-view-dashboard"></i>主页</a>
+                                <a href="index.jsp"><i class="mdi mdi-view-dashboard"></i>主页</a>
                             </li>
 
                             <li class="has-submenu">
@@ -88,7 +105,7 @@
  
                                 <ul class="submenu">
                                     <li>
-                                        <li><a href="/PYCS/Mainpages/create_prescription.jsp">病例处方</a></li>
+                                        <li><a href="create_prescription.jsp">病例处方</a></li>
                                     </li>      
                                     <li class="has-submenu">
                                         <a href="#">挂号管理</a>
@@ -97,11 +114,11 @@
                                             <li><a href="chart-chartist.html">当前排队信息</a></li>
                                             <li><a href="chart-chartjs.html">挂号删除</a></li>
                                         </ul>
-                                    </li>   
-                                    <li>
-                                        <li><a href="/PYCS/Allcases_search">病例管理</a></li>
-                                    </li>  
-                                      
+                                    </li>    
+                                    <li >
+                                        <a href="/PYCS/Allcases_search">病例管理</a>
+                                        
+                                    </li>      
                                 </ul>
                             </li>
 

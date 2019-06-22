@@ -18,7 +18,7 @@ public class DoctorDAOImpl implements DoctorDAO {
 
 	public boolean add(doctor doctor) {
 		// TODO Auto-generated method stub
-		String sql = "insert into doctor(Docter_name,Docter_num,Docter_password,Docter_dep,Docter_time,Docter_id,Docter_phone)values(?,?,?,?,?,?,?)";
+		String sql = "insert into doctor(Doctor_name,Doctor_num,Doctor_password,Doctor_dep,Doctor_time,Doctor_id,Doctor_phone)values(?,?,?,?,?,?,?)";
 		
 		Connection conn=null;
 		PreparedStatement stmt=null;
@@ -33,7 +33,7 @@ public class DoctorDAOImpl implements DoctorDAO {
 			
 			
 			stmt.setString(1, doctor.getDoctor_name());
-			stmt.setInt(2, doctor.getDoctor_num());
+			stmt.setString(2, doctor.getDoctor_num());
 			stmt.setString(3, doctor.getDoctor_password());
 			stmt.setString(4, doctor.getDoctor_dep());
 			stmt.setString(5, doctor.getDoctor_time());
@@ -68,7 +68,7 @@ public List<doctor> getAlldoctor() {
 		ResultSet rs =null;
 		
 
-		String sql = "select  Docter_name,Docter_num,Docter_password,Docter_dep,Docter_time,Docter_id,Docter_phone from doctor  ";
+		String sql = "select  Doctor_name,Doctor_num,Doctor_password,Doctor_dep,Doctor_time,Doctor_id,Doctor_phone from doctor  ";
 		
 		//System.out.println(sql);
 		
@@ -80,15 +80,15 @@ public List<doctor> getAlldoctor() {
 			
 			rs  = stmt.executeQuery();
 
-			//5���������
+	
 			while(rs.next()){
 				doctor user = new doctor();
 				
 			
 				
 				user.setDoctor_name(rs.getString("Doctor_name"));
-				user.setDoctor_num(rs.getInt("doctor_num"));
-				user.setDoctor_dep(rs.getString("Doctor_rep"));
+				user.setDoctor_num(rs.getString("doctor_num"));
+				user.setDoctor_dep(rs.getString("Doctor_dep"));
 				user.setDoctor_password(rs.getString("Doctor_password"));
 				user.setDoctor_id(rs.getString("Doctor_id"));
 				user.setDoctor_time(rs.getString("Doctor_time"));
@@ -123,7 +123,7 @@ public List<doctor> getAlldoctor() {
 		//return null;
 	}
 
-public boolean delete(int Doctor_num) {
+public boolean delete(String num) {
 	// TODO Auto-generated method stub
 	
 			Connection conn=null;
@@ -140,7 +140,7 @@ public boolean delete(int Doctor_num) {
 				 List<doctor> list= new ArrayList<doctor>();
 				conn = JdbcUtil.getConnection();
 				stmt = conn.prepareStatement(sql);
-				stmt.setInt(1,Doctor_num);
+				stmt.setString(1,num);
 				
 				int rows  = stmt.executeUpdate();
 				
@@ -165,9 +165,9 @@ public boolean delete(int Doctor_num) {
 			}
 }
 
-public boolean update(doctor doctor) {
+public boolean update(doctor doctor, String username) {
 	
-	String sql = "update doctor set  Docter_name=?,Docter_password=?,Docter_dep=?,Docter_time=?,Docter_id=?,Docter_phone=? where Doctor_num=?";
+	String sql = "update doctor set  Doctor_name=?,Doctor_num=?,Doctor_password=?,Doctor_dep=?,Doctor_time=?,Doctor_id=?,Doctor_phone=? where Doctor_num=?";
 	
 	Connection conn=null;
 	PreparedStatement stmt=null;
@@ -182,13 +182,14 @@ public boolean update(doctor doctor) {
 		
 		
 		stmt.setString(1, doctor.getDoctor_name());
-		stmt.setString(2, doctor.getDoctor_password());
-		stmt.setString(3, doctor.getDoctor_dep());
-		stmt.setString(4, doctor.getDoctor_time());
-		stmt.setString(5, doctor.getDoctor_id());
-		stmt.setString(6, doctor.getDoctor_phone());
-		stmt.setInt(7, doctor.getDoctor_num());
-
+		stmt.setString(2, doctor.getDoctor_num());
+		stmt.setString(3, doctor.getDoctor_password());
+		stmt.setString(4, doctor.getDoctor_dep());
+		stmt.setString(5, doctor.getDoctor_time());
+		stmt.setString(6, doctor.getDoctor_id());
+		stmt.setString(7, doctor.getDoctor_phone());
+	
+		stmt.setString(8, username);
 		
 		int rows  = stmt.executeUpdate();
 
@@ -206,6 +207,65 @@ public boolean update(doctor doctor) {
 	}
 
 	return false;
+}
+
+public doctor getOneUser(String username) {
+	Connection conn=null;
+	PreparedStatement stmt=null;
+	ResultSet rs =null;
+	
+
+	String sql = "select * from doctor where Doctor_num=?  ";
+	
+	//System.out.println(sql);
+	
+	try
+	{
+			
+		conn = JdbcUtil.getConnection();
+		stmt = conn.prepareStatement(sql);
+		
+		stmt.setString(1, username);
+		//stmt.setString(2, password);
+		
+		rs  = stmt.executeQuery();
+
+		//5、遍历结果
+		if(rs.next()){
+			doctor user = new doctor();
+			
+			
+			
+			user.setDoctor_name(rs.getString("Doctor_name"));
+			user.setDoctor_num(rs.getString("doctor_num"));
+			user.setDoctor_dep(rs.getString("Doctor_dep"));
+			user.setDoctor_password(rs.getString("Doctor_password"));
+			user.setDoctor_id(rs.getString("Doctor_id"));
+			user.setDoctor_time(rs.getString("Doctor_time"));
+			user.setDoctor_phone(rs.getString("Doctor_phone"));
+			return user;
+			//(rs.getString("birthday"));
+			
+		}
+		return null;
+//		6、释放占用的资源
+	
+		
+	}
+	catch(Exception e)
+	{
+		throw new RuntimeException(e);
+		
+	}
+	finally
+	{
+		JdbcUtil.release(rs, stmt, conn);
+		
+	}
+	
+	
+	
+
 }
 
 	

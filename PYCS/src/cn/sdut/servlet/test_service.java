@@ -1,4 +1,4 @@
-package cn.sdut.service;
+package cn.sdut.servlet;
 
 public class test_service {
 

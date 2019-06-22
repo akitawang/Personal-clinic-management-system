@@ -1,5 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
+<%@ page import="java.util.*"   %> 
+<%@ page import="cn.sdut.util.*"   %> 
+<%@ page import="cn.sdut.Pclass.*"   %> 
+<%@ page import="cn.sdut.dao.*"   %> 
+<%@ page import="cn.sdut.dao.impl.*"   %>     
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,6 +12,16 @@
 <title>Insert title here</title>
 </head>
 <body>
+
+
+<%
+	
+// 	List<Book> cart = (List<Book>) session.getAttribute("cart");
+
+	admin user = (admin)session.getAttribute("user");
+%>
+
+
 <!-- Navigation Bar-->
         <header id="topnav">
             <nav class="navbar-custom">
@@ -18,7 +33,7 @@
                         <li class="dropdown notification-list">
                             <a class="nav-link dropdown-toggle nav-user" data-toggle="dropdown" href="#" role="button"
                                 aria-haspopup="false" aria-expanded="false">
-                                <img src="" alt="user" class="rounded-circle"> <span class="ml-1">Agnes K <i class="mdi mdi-chevron-down"></i> </span>
+                                <img src="" alt="user" class="rounded-circle"> <span class="ml-1">   <%=user.getAdmin_num()%><i class="mdi mdi-chevron-down"></i> </span>
                             	<!-- 插入用户图片及用户名 -->
                             </a>
                             <div class="dropdown-menu dropdown-menu-right dropdown-menu-animated profile-dropdown ">
@@ -45,8 +60,8 @@
                                 
     
                                 <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                    <i class="dripicons-power"></i> <span>注销</span>
+                                <a href="../loginpages/login.jsp;" class="dropdown-item notify-item">
+                                 <i class="dripicons-power"></i> <span>注销</span>
                                 </a>
     
                             </div>
@@ -80,13 +95,13 @@
                     <ul class="navigation-menu">
 
                             <li class="has-submenu">
-                                <a href="/PYCS/Mainpages/index.jsp"><i class="mdi mdi-view-dashboard"></i>主页</a>
+                                <a href="index.jsp"><i class="mdi mdi-view-dashboard"></i>主页</a>
                             </li>
 
                             <li class="has-submenu">
                                 <a href="#"><i class="mdi mdi-atom"></i>看病就诊</a>
  
-                                <ul class="submenu">
+                                 <ul class="submenu">
                                     <li>
                                         <li><a href="/PYCS/Mainpages/create_prescription.jsp">病例处方</a></li>
                                     </li>      
@@ -97,11 +112,12 @@
                                             <li><a href="chart-chartist.html">当前排队信息</a></li>
                                             <li><a href="chart-chartjs.html">挂号删除</a></li>
                                         </ul>
-                                    </li>   
-                                    <li>
+                                    </li>    
+                                    <li class="has-submenu">
+                                    
                                         <li><a href="/PYCS/Allcases_search">病例管理</a></li>
-                                    </li>  
-                                      
+                                   
+                                    </li>      
                                 </ul>
                             </li>
 
@@ -131,10 +147,11 @@
                             <li class="has-submenu">
                                 <a href="#"><i class="mdi mdi-account-multiple"></i>医生管理</a>
                                 <ul class="submenu">
-                                    <li><a href="auth-login.html">增加医生</a></li>
-                                    <li><a href="auth-register.html">修改医生信息</a></li>
-                                    <li><a href="auth-recoverpassword.html">查询医生信息</a></li>
-                                    <li><a href="auth-lock-screen.html">删除医生信息</a></li>
+                                    <li><a href="/PYCS/Mainpages/add_doctor.jsp">增加医生</a></li>  
+                                    <li><a href="/PYCS/Mainpages/deleteDoctor1.jsp">删除医生</a></li>
+                                    <li><a href="/PYCS/Mainpages/updateDoctor1.jsp">修改医生</a></li>
+                                    <li><a href="/PYCS/Mainpages/doctor_manager.jsp">医生信息统计</a></li>
+                              
                                 </ul>
                             </li>
 
