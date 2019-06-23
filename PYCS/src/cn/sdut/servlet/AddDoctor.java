@@ -82,18 +82,6 @@ public class AddDoctor extends HttpServlet {
 		}
 		
 		
-		/*ManageService dao = new ManageService();
-		
-		int i;
-		i = dao.register(username,userpassword,userphone,useremail);
-		if(i == 1)
-		{
-			pw.write("<script language='javascript'>alert('娉ㄥ唽鎴愬姛锛?');if(window.confirm)window.location = '/mydoor/searchservlet';</script>");
-		}
-		else
-		{
-			pw.write("<script language='javascript'>alert('娉ㄥ唽澶辫触锛?');if(window.confirm)window.location = '/mydoor/back-page/forms/new_onemanage.jsp'</script>");
-		} */
 	}
 
 	/**

@@ -19,6 +19,14 @@
 // 	List<Book> cart = (List<Book>) session.getAttribute("cart");
 
 	doctor user1 = (doctor)session.getAttribute("user1");
+	if(user1==null)
+	{
+		response.setHeader("refresh", "0;url=/PYCS/loginpages/login.jsp");
+	}
+	
+	
+	else
+	{
 %>
 
 
@@ -62,7 +70,7 @@
                                 
     
                                 <!-- item-->
-                                <a href="../loginpages/login.jsp;" class="dropdown-item notify-item">
+                                <a href="/PYCS/Doctor_out;" class="dropdown-item notify-item">
                                  <i class="dripicons-power"></i> <span>注销</span>
                                 </a>
     
@@ -183,7 +191,7 @@
         </footer>
         <!-- End Footer -->
 
-
+<%} %>
 
 
 </body>

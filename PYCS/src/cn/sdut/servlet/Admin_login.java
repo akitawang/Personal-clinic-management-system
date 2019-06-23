@@ -89,7 +89,7 @@ else
 			System.out.println("医生登陆成功");
 			
 			
-			pw.write("<script language='javascript'>window.location = '/PYCS/Mainpages/index_doctor.jsp';</script>");
+			pw.write("<script language='javascript'>window.location = '/PYCS/Mainpages/index.jsp';</script>");
 			
 		}
 	else {

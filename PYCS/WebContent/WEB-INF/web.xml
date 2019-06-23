@@ -129,4 +129,14 @@
     <servlet-name>Admin_out</servlet-name>
     <url-pattern>/Admin_out</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Doctor_out</display-name>
+    <servlet-name>Doctor_out</servlet-name>
+    <servlet-class>cn.sdut.servlet.Doctor_out</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Doctor_out</servlet-name>
+    <url-pattern>/Doctor_out</url-pattern>
+  </servlet-mapping>
 </web-app>
