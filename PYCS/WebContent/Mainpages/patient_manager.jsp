@@ -66,10 +66,10 @@
 
 <%
 
-DoctorDAOImpl dao=new DoctorDAOImpl();
+PatientDAOImpl dao=new PatientDAOImpl();
 
-List<doctor> bean1=null;
-bean1=dao.getAlldoctor();
+List<patient> bean1=null;
+bean1=dao.getAllpatient();
 System.out.print(bean1.size());
 %>
 
@@ -78,15 +78,17 @@ System.out.print(bean1.size());
                             <table id="datatable" class="table table-bordered dt-responsive nowrap">
                                 <thead>
                                 <tr>
+                                       <th>排队序号</th>
                                     <th>姓名</th>
-                                    <th>账号</th>
-                                    <th>科室</th>
+                                    <th>性别</th>
+                                    <th>体重</th>
                                     <th>入职时间</th>
-                                    <th>员工编号</th>
+                                    <th>身份证号</th>
                                     <th>电话号码</th>
-                                    
-                                   
-                                      
+                                  <th>是否在队列</th>
+                            
+                                    <th>操作</th>
+                                  
                                   
                                            
                                 </tr>
@@ -100,7 +102,7 @@ System.out.print(bean1.size());
                           
                           for(int i=0; i<bean1.size();i++)
                   		{
-                  			doctor bean = bean1.get(i);
+                  			patient bean = bean1.get(i);
                   			//System.out.println(i);
                   			
                   		
@@ -112,18 +114,46 @@ System.out.print(bean1.size());
 
                                 <tr>
                                
-                                
-                                    <td> <%=bean.getDoctor_name()%></td>
+                                   <td><%=bean.getPatient_list()%></td>
+                                    <td> <%=bean.getPatient_name()%></td>
       
                                     <td id="username">
-                                     <%=bean.getDoctor_num()%>
+                                     <%=bean.getPatient_sex()%>
                                      </td>
-                                    <td> <%=bean.getDoctor_dep()%></td>
-                                  <td> <%=bean.getDoctor_time().substring(6,bean.getDoctor_time().length())%>/<%=bean.getDoctor_time().substring(0,5)%></td>
-                                    <td><%=bean.getDoctor_id()%></td>
-                                      <td><%=bean.getDoctor_phone()%></td>
-                    
-                                        
+                                    <td> <%=bean.getPatient_weight()%></td>
+                                  <td> <%=bean.getPatient_birth().substring(6,bean.getPatient_birth().length())%>/<%=bean.getPatient_birth().substring(0,5)%></td>
+                                    <td><%=bean.getPatient_id()%></td>
+                                      <td><%=bean.getPatient_phone()%></td>
+                                  <td><%=bean.getPatient_zt()%></td>
+                                    
+                                    
+                                    
+                                    
+                                     <td>
+                                    <% if(bean.getPatient_zt().equals("YES"))
+                                    {
+                                    	%>
+                                    
+                                   		<a href="/PYCS/Update1patent?id=<%=bean.getPatient_id()%>" class="btn btn-info">
+											<i class="dripicons-document"></i> <span>传呼</span>
+										</a>
+										<%} 
+                                    else
+                                    {%>
+                                    	<a  class="btn btn-info">
+										<i class="dripicons-document"></i> <span>已出队</span>
+									</a>
+                                   <%  }%>
+										
+								
+										<a href="/PYCS/Mainpages/updatepatient.jsp?id2=<%=bean.getPatient_list()%>" class="btn btn-info" >
+											<i class="dripicons-document"></i> <span>修改</span>
+										</a>
+                                    
+                                    </td>
+                                    
+                                    
+                                    
                                     
                                         
                                 </tr>

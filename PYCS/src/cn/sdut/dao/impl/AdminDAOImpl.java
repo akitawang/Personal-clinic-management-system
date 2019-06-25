@@ -76,7 +76,7 @@ public List<admin> getAlladmin() {
 			
 			rs  = stmt.executeQuery();
 
-			//5锟斤拷锟斤拷锟斤拷锟斤拷锟�
+
 			while(rs.next()){
 				admin user = new admin();
 				

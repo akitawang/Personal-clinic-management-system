@@ -118,9 +118,9 @@
                                     <li class="has-submenu">
                                         <a href="#">挂号管理</a>
                                         <ul class="submenu">
-                                            <li><a href="chart-flot.html">门诊挂号</a></li>
-                                            <li><a href="chart-chartist.html">当前排队信息</a></li>
-                                            <li><a href="chart-chartjs.html">挂号删除</a></li>
+                                            <li><a href="/PYCS/Mainpages/add_patient.jsp">门诊挂号</a></li>
+                                            <li><a href="/PYCS/Mainpages/patient_manager.jsp">当前排队信息</a></li>
+                                  
                                         </ul>
                                     </li>    
                                     <li class="has-submenu">
@@ -134,9 +134,7 @@
                             <li class="has-submenu">
                                 <a href="#"><i class=" mdi mdi-account-location"></i>客户管理</a>
                                 <ul class="submenu">
-                                    <li><a href="email-inbox.html">客户信息修改</a></li>
-                                    <li><a href="email-read.html">客户信息查询</a></li>
-                                    <li><a href="email-compose.html">客户删除</a></li>
+                                 <li><a href="/PYCS/Mainpages/patient.jsp">客户信息管理</a></li>
                                 </ul>
                             </li>
 
@@ -279,7 +277,7 @@ else
                     <ul class="navigation-menu">
 
                             <li class="has-submenu">
-                                <a href="index.jsp"><i class="mdi mdi-view-dashboard"></i>主页</a>
+                                <a href="/PYCS/Mainpages/index.jsp"><i class="mdi mdi-view-dashboard"></i>主页</a>
                             </li>
 
                             <li class="has-submenu">
@@ -292,9 +290,9 @@ else
                                     <li class="has-submenu">
                                         <a href="#">挂号管理</a>
                                         <ul class="submenu">
-                                            <li><a href="chart-flot.html">门诊挂号</a></li>
-                                            <li><a href="chart-chartist.html">当前排队信息</a></li>
-                                            <li><a href="chart-chartjs.html">挂号删除</a></li>
+                                            <li><a href="/PYCS/Mainpages/add_patient.jsp">门诊挂号</a></li>
+                                          <li><a href="/PYCS/Mainpages/patient_manager.jsp">当前排队信息</a></li>
+                               
                                         </ul>
                                     </li>    
                                     <li >
@@ -307,9 +305,8 @@ else
                             <li class="has-submenu">
                                 <a href="#"><i class=" mdi mdi-account-location"></i>客户管理</a>
                                 <ul class="submenu">
-                                    <li><a href="email-inbox.html">客户信息修改</a></li>
-                                    <li><a href="email-read.html">客户信息查询</a></li>
-                                    <li><a href="email-compose.html">客户删除</a></li>
+                                    <li><a href="/PYCS/Mainpages/patient.jsp">客户信息管理</a></li>
+                         
                                 </ul>
                             </li>
 
