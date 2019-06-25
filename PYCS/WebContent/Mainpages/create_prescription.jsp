@@ -80,7 +80,7 @@
                                    <label>出生日期<span class="text-danger">*</span></label>
                                    <div>
                                        <div class="input-group">
-                                           <input type="text" class="form-control" required  readonly placeholder="mm/dd/yyyy" name="birth" id="datepicker">
+                                           <input type="text" class="form-control" required   placeholder="mm/dd/yyyy" name="birth" id="datepicker">
                                            <div class="input-group-append">
                                            		<span class="input-group-text"><i class="mdi mdi-calendar"></i></span>
                                            </div>

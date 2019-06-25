@@ -4,7 +4,7 @@
 <html>
 <head>
         <meta charset="utf-8" />
-        <title>个人门诊管理系统-病例处方</title>
+        <title>个人门诊管理系统-增添医生</title>
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
         <meta content="Coderthemes" name="author" />
@@ -67,7 +67,7 @@
                                     
                                      <div class="form-group col-md-3">
                                         <label for="inputPassword4" class="col-form-label">密码<span class="text-danger">*</span></label>
-                                        <input type="text" class="form-control" id="password" required  name="password" placeholder="请输入医生密码" pattern="^[a-zA-Z0-9_]{6,16}$" title="只能是6-11位字母、数字、_" >
+                                        <input type="password" class="form-control" id="password" required  name="password" placeholder="请输入医生密码" pattern="^[a-zA-Z0-9_]{6,16}$" title="只能是6-11位字母、数字、_" >
                                     </div>
                                 </div>
                                 <div class="form-row">

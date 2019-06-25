@@ -4,7 +4,7 @@
 <html>
 <head>
         <meta charset="utf-8" />
-        <title>个人门诊管理系统-病例处方</title>
+        <title>个人门诊管理系统-门诊挂号</title>
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
         <meta content="Coderthemes" name="author" />
@@ -60,8 +60,8 @@
                                         <label for="gender" class="col-form-label">性别<span class="text-danger">*</span></label>
                                     <div class="col-sm-15">
                                         <select id="gender" name="gender" class="form-control">
-                                            <option>man</option>
-                                            <option>woman</option>
+                                            <option>男</option>
+                                            <option>女</option>
                                         </select>
 									</div>
 									</div>
@@ -77,7 +77,7 @@
                                    <label>出生日期<span class="text-danger">*</span></label>
                                    <div>
                                        <div class="input-group">
-                                           <input type="text" class="form-control" required  readonly placeholder="mm/dd/yyyy" name="birth" id="datepicker">
+                                           <input type="text" class="form-control" required   placeholder="mm/dd/yyyy" name="birth" id="datepicker">
                                            <div class="input-group-append">
                                            		<span class="input-group-text"><i class="mdi mdi-calendar"></i></span>
                                            </div>
@@ -95,7 +95,7 @@
                                 
                                     <div class="form-group col-md-3">
                                         <label for="inputPassword4" class="col-form-label">身份证号<span class="text-danger">*</span></label>
-                                        <input type="text" class="form-control" id="id" required  onkeyup="value=value.replace(/[^\d]/g,'')" name="id" placeholder="请输入 身份证">
+                                        <input type="text" class="form-control" id="id" required   name="id" placeholder="请输入 15位或18位身份证">
                                     </div>
                                 
 								</div>
@@ -178,14 +178,23 @@
         	 function verify() {
         		 
         		 var isChecked = $('#check').prop('checked');
-        		 if(isChecked){
-        			 return true;
-        		 }
+        		 var id = document.getElementById("id").value;
+        		 if(id.length == 18 ||id.length == 15)
+        		{
+        			 if(isChecked){
+            			 return false;
+            		 }
+            		 else{
+            			 
+            			 $.NotificationApp.send("发生错误！", "您未勾选‘我已对上述信息复核’选择框", 'top-right', '#bf441d', 'error');
+            			 return false;
+            		 }
+        		}
         		 else{
-        			 
-        			 $.NotificationApp.send("发生错误！", "您未勾选‘我已对上述信息复核’选择框", 'top-right', '#bf441d', 'error');
+        			 $.NotificationApp.send("您的输入有误！", "身份证有效位数为15或18位", 'top-right', '#bf441d', 'error');
         			 return false;
         		 }
+        		 
         		 
         		
         	 }

@@ -43,7 +43,7 @@
                         <li class="dropdown notification-list">
                             <a class="nav-link dropdown-toggle nav-user" data-toggle="dropdown" href="#" role="button"
                                 aria-haspopup="false" aria-expanded="false">
-                                <img src="" alt="user" class="rounded-circle"> <span class="ml-1">   <%=user.getAdmin_num()%><i class="mdi mdi-chevron-down"></i> </span>
+                                您好！<span class="ml-1">   <%=user.getAdmin_num()%><i class="mdi mdi-chevron-down"></i> </span>
                             	<!-- 插入用户图片及用户名 -->
                             </a>
                             <div class="dropdown-menu dropdown-menu-right dropdown-menu-animated profile-dropdown ">
@@ -53,21 +53,11 @@
                                 </div>
     
                                 <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                <a href="/PYCS/Mainpages/PersonalInfo.jsp" class="dropdown-item notify-item">
                                     <i class="dripicons-user"></i> <span>我的账户</span>
                                 </a>
     
-                                <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                    <i class="dripicons-gear"></i> <span>设置</span>
-                                </a>
-    
-                                <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                    <i class="dripicons-help"></i> <span>支持</span>
-                                </a>
-    
-                                
+                               
     
                                 <!-- item-->
                                 <a href="/PYCS/Admin_out;" class="dropdown-item notify-item">
@@ -142,12 +132,20 @@
                                 <a href="#"><i class="mdi mdi-cube-outline"></i>药品管理</a>
                                 <ul class="submenu">
                                     <li>
-                                        <a href="calendar.html">药品添加入库</a>
-                                        <a href="calendar.html">药品信息修改</a>
-                                        <a href="calendar.html">药品库存查询</a>
-                                        <a href="calendar.html">药品下架</a>
-                                        <a href="calendar.html">药品预警</a>
-                                    </li>      
+                                        <a href="/PYCS/Mainpages/drug_add.jsp">药品添加入库</a>
+                                    </li>
+                                    <li>
+                                        <a href="/PYCS/drug_servlet">药品信息查询</a>
+                                        <!-- <a href="/PYCS/drug_warning">药品预警</a> -->
+                                    </li>
+                                     <li class="has-submenu">
+                                        <a href="#">药品预警</a>
+                                        <ul class="submenu">
+                                            <li><a href="/PYCS/drug_warning">时间预警</a></li>
+                                            <li><a href="/PYCS/drug_warning_s">库存预警</a></li>
+                                          
+                                        </ul>
+                                    </li>        
                                       
                                 </ul>
                             </li>
@@ -215,7 +213,7 @@ else
                         <li class="dropdown notification-list">
                             <a class="nav-link dropdown-toggle nav-user" data-toggle="dropdown" href="#" role="button"
                                 aria-haspopup="false" aria-expanded="false">
-                                <img src="" alt="user" class="rounded-circle"> <span class="ml-1"> <%=user1.getDoctor_name()%> <i class="mdi mdi-chevron-down"></i> </span>
+                                您好！<span class="ml-1"> <%=user1.getDoctor_name()%> <i class="mdi mdi-chevron-down"></i> </span>
                             	<!-- 插入用户图片及用户名 -->
                             </a>
                             <div class="dropdown-menu dropdown-menu-right dropdown-menu-animated profile-dropdown ">
@@ -225,19 +223,11 @@ else
                                 </div>
     
                                 <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                <a href="/PYCS/Mainpages/PersonalInfo.jsp" class="dropdown-item notify-item">
                                     <i class="dripicons-user"></i> <span>我的账户</span>
                                 </a>
     
-                                <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                    <i class="dripicons-gear"></i> <span>设置</span>
-                                </a>
-    
-                                <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                    <i class="dripicons-help"></i> <span>支持</span>
-                                </a>
+                                
     
                                 
     
@@ -314,12 +304,20 @@ else
                                 <a href="#"><i class="mdi mdi-cube-outline"></i>药品管理</a>
                                 <ul class="submenu">
                                     <li>
-                                        <a href="calendar.html">药品添加入库</a>
-                                        <a href="calendar.html">药品信息修改</a>
-                                        <a href="calendar.html">药品库存查询</a>
-                                        <a href="calendar.html">药品下架</a>
-                                        <a href="calendar.html">药品预警</a>
-                                    </li>      
+                                        <a href="/PYCS/Mainpages/drug_add.jsp">药品添加入库</a>
+                                    </li>
+                                    <li>
+                                        <a href="/PYCS/drug_servlet">药品信息查询</a>
+                                        <!-- <a href="/PYCS/drug_warning">药品预警</a> -->
+                                    </li>
+                                     <li class="has-submenu">
+                                        <a href="#">药品预警</a>
+                                        <ul class="submenu">
+                                            <li><a href="/PYCS/drug_warning">时间预警</a></li>
+                                            <li><a href="/PYCS/drug_warning_s">库存预警</a></li>
+                                          
+                                        </ul>
+                                    </li>        
                                       
                                 </ul>
                             </li>

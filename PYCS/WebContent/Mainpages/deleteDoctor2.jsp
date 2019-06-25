@@ -11,7 +11,7 @@
 <html>
 <head>
         <meta charset="utf-8" />
-        <title>个人门诊管理系统-病例处方</title>
+        <title>个人门诊管理系统-删除医生</title>
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
         <meta content="Coderthemes" name="author" />
@@ -100,7 +100,7 @@ else
                                     
                                      <div class="form-group col-md-3">
                                         <label for="inputPassword4" class="col-form-label">密码<span class="text-danger">*</span></label>
-                                        <input type="text" class="form-control" id="password" required  readOnly="true" name="password" value=<%=data.getDoctor_password()%>  >
+                                        <input type="password" class="form-control" id="password" required  readOnly="true" name="password" value=<%=data.getDoctor_password()%>  >
                                     </div>
                                 </div>
                                 <div class="form-row">

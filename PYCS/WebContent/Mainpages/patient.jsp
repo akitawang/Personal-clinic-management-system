@@ -13,7 +13,7 @@
 
     <head>
         <meta charset="utf-8" />
-        <title>Greeva - Responsive Bootstrap 4 Admin Dashboard</title>
+        <title>个人门诊管理系统-客户管理</title>
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
         <meta content="Coderthemes" name="author" />
@@ -85,7 +85,7 @@ System.out.print(bean1.size());
                                     <th>入职时间</th>
                                     <th>身份证号</th>
                                     <th>电话号码</th>
-                                  <th>是否在队列</th>
+                                  
                             
                                     <th>操作</th>
                                   
@@ -124,7 +124,7 @@ System.out.print(bean1.size());
                                   <td> <%=bean.getPatient_birth().substring(6,bean.getPatient_birth().length())%>/<%=bean.getPatient_birth().substring(0,5)%></td>
                                     <td><%=bean.getPatient_id()%></td>
                                       <td><%=bean.getPatient_phone()%></td>
-                                  <td><%=bean.getPatient_zt()%></td>
+                                
                                     
                                     
                                     

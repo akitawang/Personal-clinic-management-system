@@ -2,19 +2,18 @@ package cn.sdut.Pclass;
 
 public class drug {
 
-	private int Drug_id;              //药品编号
-	private String Drug_name;         //药品名称
-	private String Drug_class;        //药品分类
-	private String Drug_number;       //批准文号
-	private String Drug_factory;      //生产厂家
-	private String Drug_type;         //用药类型
-	private String Drug_instruction;  //药品说明
-	private String Drug_function;     //药品功效
-	private int Drug_stock;           //药品库存
-	private double Drug_price;        //药品价格
-	private String Drug_date;         //生产日期
-	private String Drug_expdate;      //失效日期
-	
+	private int Drug_id;              //鑽搧缂栧彿
+	private String Drug_name;         //鑽搧鍚嶇О
+	private String Drug_class;        //鑽搧鍒嗙被
+	private String Drug_number;       //鎵瑰噯鏂囧彿
+	private String Drug_factory;      //鐢熶骇鍘傚
+	private String Drug_type;         //鍓傚瀷
+	private String Drug_instruction;  //鑽搧璇存槑
+	private String Drug_function;     //鑽搧鍔熸晥
+	private int Drug_stock;           //鑽搧搴撳瓨
+	private double Drug_price;        //鑽搧浠锋牸
+	private String Drug_date;         //鐢熶骇鏃ユ湡
+	private String Drug_expdate;      //澶辨晥鏃ユ湡
 	public drug(int drug_id, String drug_name, String drug_class, String drug_number, String drug_factory,
 			String drug_type, String drug_instruction, String drug_function, int drug_stock, double drug_price,
 			String drug_date, String drug_expdate) {
@@ -33,8 +32,11 @@ public class drug {
 		Drug_expdate = drug_expdate;
 	}
 	
+	
 	public drug() {
-		super();	}
+		super();
+	}
+
 
 	public int getDrug_id() {
 		return Drug_id;
@@ -108,5 +110,7 @@ public class drug {
 	public void setDrug_expdate(String drug_expdate) {
 		Drug_expdate = drug_expdate;
 	}
+	
+	
 
 }

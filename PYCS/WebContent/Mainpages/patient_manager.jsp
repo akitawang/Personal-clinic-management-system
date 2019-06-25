@@ -13,7 +13,7 @@
 
     <head>
         <meta charset="utf-8" />
-        <title>Greeva - Responsive Bootstrap 4 Admin Dashboard</title>
+        <title>个人门诊管理系统-当前排队信息</title>
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
         <meta content="Coderthemes" name="author" />
@@ -56,12 +56,12 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="card-box">
-                            <h4 class="header-title">医生信息表</h4>
+                            <h4 class="header-title">当前排队信息</h4>
                             
                    
                             
                             <p class="text-muted font-13 m-b-30">
-                                 	本页面显示当前数据库内所有已添加的医生信息。
+                                 	本页面显示当前所有挂号的患者信息，您可以通过本页面进行叫号。
                                  	  </p>
 
 <%
@@ -146,9 +146,7 @@ System.out.print(bean1.size());
                                    <%  }%>
 										
 								
-										<a href="/PYCS/Mainpages/updatepatient.jsp?id2=<%=bean.getPatient_list()%>" class="btn btn-info" >
-											<i class="dripicons-document"></i> <span>修改</span>
-										</a>
+										
                                     
                                     </td>
                                     
