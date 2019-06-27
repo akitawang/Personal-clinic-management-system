@@ -339,4 +339,24 @@
     <servlet-name>drug_warning</servlet-name>
     <url-pattern>/drug_warning</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Log_drug_details</display-name>
+    <servlet-name>Log_drug_details</servlet-name>
+    <servlet-class>cn.sudt.servlet.Log_drug_details</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Log_drug_details</servlet-name>
+    <url-pattern>/Log_drug_details</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Log_del</display-name>
+    <servlet-name>Log_del</servlet-name>
+    <servlet-class>cn.sudt.servlet.Log_del</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Log_del</servlet-name>
+    <url-pattern>/Log_del</url-pattern>
+  </servlet-mapping>
 </web-app>

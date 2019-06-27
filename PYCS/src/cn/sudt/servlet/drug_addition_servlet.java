@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import cn.sdut.Pclass.drug;
 import cn.sdut.dao.impl.DrugDAOImpl;
+import cn.sdut.dao.impl.LogDaoImpl;
 
 /**
  * Servlet implementation class drug_addition_servlet
@@ -37,6 +38,8 @@ public class drug_addition_servlet extends HttpServlet {
 
 		response.setContentType("text/html;charset=utf-8");
 		request.setCharacterEncoding("utf-8");
+		SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//设置日期格式
+		String date = df.format(new Date());// new Date()为获取当前系统时间
 		
 		PrintWriter pw = response.getWriter();
 		
@@ -57,6 +60,9 @@ public class drug_addition_servlet extends HttpServlet {
 		double prices = Double.parseDouble(price);
 		int stock = Integer.parseInt(amount);
 		DrugDAOImpl impl = new DrugDAOImpl();
+		
+		LogDaoImpl logdao = new LogDaoImpl();
+		
 		
 		try {
 			
@@ -82,8 +88,9 @@ public class drug_addition_servlet extends HttpServlet {
 				
 				
 				boolean add = impl.add(drug);
+				boolean d2 = logdao.add_drug_add(dname,date);
 				
-				if(add) {
+				if(add && d2) {
 					pw.write("<script language='javascript'>alert('添加成功！');if(window.confirm)window.location = '/PYCS/drug_servlet';</script>");
 				}
 				else {

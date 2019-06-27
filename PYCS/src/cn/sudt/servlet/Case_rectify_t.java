@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import cn.sdut.Pclass.cases;
 import cn.sdut.dao.impl.CasesDAOImpl;
+import cn.sdut.dao.impl.LogDaoImpl;
 
 /**
  * Servlet implementation class Case_rectify_t
@@ -37,6 +38,9 @@ public class Case_rectify_t extends HttpServlet {
 
 		PrintWriter pw = response.getWriter();
 		
+		SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//设置日期格式
+		String date = df.format(new Date());// new Date()为获取当前系统时间
+		
 		String case_num = request.getParameter("num");
 		String Case_phone = request.getParameter("phone");
 		String Case_weight = request.getParameter("weight");
@@ -48,6 +52,7 @@ public class Case_rectify_t extends HttpServlet {
 		String Case_advice = request.getParameter("advice");
 		String Case_item = request.getParameter("item");
 		String Case_pre = request.getParameter("pre");
+		String Case_name = request.getParameter("name");
 		if(Case_weight=="") {
 			Case_weight="null";
 		}
@@ -78,7 +83,13 @@ public class Case_rectify_t extends HttpServlet {
 		
 		CasesDAOImpl dao = new CasesDAOImpl();
 		boolean verify = dao.update(newcase);
-		if(verify) {
+		
+		
+		LogDaoImpl logdao = new LogDaoImpl();
+		boolean verify2 = logdao.add_case_rec(Case_name, date);
+		
+		
+		if(verify&&verify2) {
 			pw.write("<script language='javascript'>alert('修改成功！');if(window.confirm)window.location = '/PYCS/Allcases_search';</script>");
 		}
 		else

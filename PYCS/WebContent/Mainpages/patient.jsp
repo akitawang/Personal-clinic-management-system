@@ -64,14 +64,14 @@
                                  	本页面显示当前数据库内所有已添加的医生信息。
                                  	  </p>
 
-<%
-
-PatientDAOImpl dao=new PatientDAOImpl();
-
-List<patient> bean1=null;
-bean1=dao.getAllpatient();
-System.out.print(bean1.size());
-%>
+								<%
+								
+								PatientDAOImpl dao=new PatientDAOImpl();
+								
+								List<patient> bean1=null;
+								bean1=dao.getAllpatient();
+								System.out.print(bean1.size());
+								%>
 
         
 
@@ -134,7 +134,7 @@ System.out.print(bean1.size());
                                     {
                                     	%>
                                     
-                                   		<a href="/PYCS/deletepatient?id=<%=bean.getPatient_list()%>" class="btn btn-info">
+                                   		<a href="/PYCS/deletepatient?id=<%=bean.getPatient_list()%>&&name=<%=bean.getPatient_name()%>" class="btn btn-info">
 											<i class="dripicons-document"></i> <span>删除</span>
 										</a>
 										<%} 

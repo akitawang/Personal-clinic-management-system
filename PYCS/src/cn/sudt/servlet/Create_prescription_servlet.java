@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import cn.sdut.Pclass.cases;
 import cn.sdut.dao.impl.CasesDAOImpl;
+import cn.sdut.dao.impl.LogDaoImpl;
 
 
 /**
@@ -94,7 +95,13 @@ public class Create_prescription_servlet extends HttpServlet {
 		data.setCase_pre(Case_pre);
 		data.setCase_symptom(Case_symptom);
 		boolean judge = impl.add(data);
-		if(judge) {
+		
+		LogDaoImpl impl2 = new LogDaoImpl();
+		boolean judge2 = impl2.add_case_add(data);
+		
+		
+		
+		if(judge && judge2) {
 			pw.write("<script language='javascript'>alert('添加成功！');if(window.confirm)window.location = '/PYCS/Mainpages/create_prescription.jsp';</script>");
 		}
 		else {

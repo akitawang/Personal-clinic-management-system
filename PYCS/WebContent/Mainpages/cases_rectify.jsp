@@ -64,7 +64,7 @@
                                 <div class="form-row">
                                     <div class="form-group col-md-3">
                                         <label for="name" class="col-form-label">姓名<span class="text-danger">*</span></label>
-                                        <input type="text" class="form-control"  required name="name" disabled="" placeholder="${U.case_name}">
+                                        <input type="text" class="form-control"  required id="name" name="name" readonly value="${U.case_name}" placeholder="${U.case_name}">
                                     </div>
                                     <div class="form-group col-md-2">
                                         <label for="gender" class="col-form-label">性别<span class="text-danger">*</span></label>

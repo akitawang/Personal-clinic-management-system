@@ -2,6 +2,8 @@ package cn.sudt.servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -10,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import cn.sdut.Pclass.drug;
 import cn.sdut.dao.impl.DrugDAOImpl;
+import cn.sdut.dao.impl.LogDaoImpl;
 
 /**
  * Servlet implementation class cart_servlet_a
@@ -33,10 +36,15 @@ public class cart_servlet_a extends HttpServlet {
 		//response.getWriter().append("Served at: ").append(request.getContextPath());
 		response.setContentType("text/html;charset=utf-8");
 		request.setCharacterEncoding("utf-8");
-
+		Date t = new Date();
+		
+		SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm");
+		String dated = df.format(t);
 		PrintWriter pw = response.getWriter();
 		
 		String drugid = request.getParameter("id2");
+		
+		String name = new String(request.getParameter("name").getBytes("ISO-8859-1"), "UTF-8");
 
 		int did = Integer.parseInt(drugid);
 		
@@ -51,12 +59,15 @@ public class cart_servlet_a extends HttpServlet {
 			
 			double price = find.getDrug_price();
 			
+			LogDaoImpl dao2 = new LogDaoImpl();
+			
+			
 			if(sto > 0)
 			{
 				int stock = sto - 1;
 				boolean b = impl.update(did, ins, fun, price, stock);
-				
-				if(b) {
+				boolean judge2 = dao2.add_drug_sell(name, dated);
+				if(b&&judge2) {
 					pw.write("<script language='javascript'>alert('您售出了一件药品！');if(window.confirm)window.location = '/PYCS/drug_servlet';</script>");
 				}
 				else

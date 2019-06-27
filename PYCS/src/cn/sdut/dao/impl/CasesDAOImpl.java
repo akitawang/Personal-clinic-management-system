@@ -20,7 +20,8 @@ public class CasesDAOImpl implements CasesDAO {
 	public boolean add(cases Cases) {
 		// TODO Auto-generated method stub
 		String sql = "insert into cases(Case_name,Case_sex,Case_birth,Case_phone,Case_weight,Case_address,Case_allergy,Case_height,Case_type,Case_symptom,Case_info,Case_advice,Case_item,Case_pre,Case_currentdate)values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
-		
+		String sql2 = "insert into log(Log_type,Log_description)values(?,?)";
+		String des = "患者  "+Cases.getCase_name()+"  在"+Cases.getCase_currentdate()+"在本院新建病例处方";
 		Connection conn=null;
 		PreparedStatement stmt=null;
 		ResultSet rs =null;

@@ -1,4 +1,4 @@
-package cn.sdut.servlet;
+package cn.sudt.servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -10,19 +10,19 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import cn.sdut.dao.impl.CasesDAOImpl;
 import cn.sdut.dao.impl.LogDaoImpl;
-import cn.sdut.dao.impl.PatientDAOImpl;
 
 /**
- * Servlet implementation class deletepatent
+ * Servlet implementation class Log_del
  */
-public class deletepatient extends HttpServlet {
+public class Log_del extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public deletepatient() {
+    public Log_del() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -31,30 +31,25 @@ public class deletepatient extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
 		response.setContentType("text/html;charset=utf-8");
 		request.setCharacterEncoding("utf-8");
-		PrintWriter pw = response.getWriter();
 		
-		String num = request.getParameter("id");
-		String name = new String(request.getParameter("name").getBytes("ISO-8859-1"), "UTF-8");
-		SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//设置日期格式
-		String date = df.format(new Date());// new Date()为获取当前系统时间
-		
-		
-		int li=Integer.valueOf(num);
-		PatientDAOImpl dao = new PatientDAOImpl();
-		boolean d = dao.delete(li);
+		String id = request.getParameter("id");
+		int parseInt = Integer.parseInt(id);
 		
 		LogDaoImpl logdao = new LogDaoImpl();
-		boolean d2 = logdao.add_patient_del(name,date);
+		boolean d2 = logdao.del_log(parseInt);
 		
-		if(d && d2)
+		PrintWriter pw = response.getWriter();
+		
+		if(d2)
 		{
-			pw.write("<script language='javascript'>alert('删除成功！');if(window.confirm)window.location = '/PYCS/Mainpages/patient_manager.jsp';</script>");
+			pw.write("<script language='javascript'>alert('删除成功！');if(window.confirm)window.location = '/PYCS/Log_drug_details';</script>");
 		}
 		else
 		{
-			pw.write("<script language='javascript'>alert('删除失败！');if(window.confirm)window.location = '/PYCS/Mainpages/patient_manager.jsp';</script>");
+			pw.write("<script language='javascript'>alert('修改失败！');if(window.confirm)window.location = '/PYCS/Log_drug_details';</script>");
 		}
 	}
 

@@ -73,9 +73,8 @@
 									<label for="name" class="col-form-label">药品编号<span
 										class="text-danger">*</span></label> <input type="text"
 										class="form-control" maxlength="4"
-										onkeyup="if(this.value.length==1){this.value=this.value.replace(/[^19]/g,'')}else{this.value=this.value.replace(/\D/g,'')}"
-										onafterpaste="if(this.value.length==1){this.value=this.value.replace(/[^1-19]/g,'')}else{this.value=this.value.replace(/\D/g,'')}"
-										id="drugid" required name="drugid" placeholder="请输入药品编号">
+										onkeyup="value=value.replace(/[^\d]/g,'')" 
+										id="drugid" required name="drugid" placeholder="请输入四位药品编号">
 								</div>
 
 								<div class="form-group col-md-3">
@@ -90,7 +89,7 @@
 										class="text-danger">*</span></label> <input type="text"
 										class="form-control" id="apnumber"
 										onkeyup="value=value.replace(/[^\d]/g,'')" required
-										name="apnumber" placeholder="请输入药品批准文号">
+										name="apnumber" placeholder="请输入药品批准文号（数字）">
 								</div>
 
 								<div class="form-group col-md-2">
@@ -146,8 +145,9 @@
 								<div>
 									<div class="input-daterange input-group" id="date-range">
 										<input type="text" class="form-control" required name="start"
-											placeholder="请输入药品生产日期" /> <input type="text"
-											class="form-control" required name="end"
+											placeholder="请输入药品生产日期" /> 
+											<input type="text"
+											class="form-control" required readonly name="end"
 											placeholder="请输入药品失效日期" />
 									</div>
 								</div>

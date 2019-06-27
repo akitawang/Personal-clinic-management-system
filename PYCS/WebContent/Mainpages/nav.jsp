@@ -95,7 +95,7 @@
                     <ul class="navigation-menu">
 
                             <li class="has-submenu">
-                                <a href="index.jsp"><i class="mdi mdi-view-dashboard"></i>主页</a>
+                                <a href="/PYCS/Mainpages/index.jsp"><i class="mdi mdi-view-dashboard"></i>主页</a>
                             </li>
 
                             <li class="has-submenu">
@@ -162,18 +162,14 @@
                             </li>
 
                             <li class="has-submenu">
-                                <a href="#"><i class="mdi mdi-file-multiple"></i>数据统计</a>
-                                <ul class="submenu">
-                                    <li><a href="pages-invoice.html">诊所收支统计</a></li>
-                                    <li><a href="pages-pricing.html">门诊日志</a></li>
-                                    <li><a href="pages-starter.html">药品销售统计</a></li>
-                                </ul>
+                                <a href="/PYCS/Log_drug_details"><i class="mdi mdi-file-multiple"></i>门诊日志</a>
+                                
                             </li>
                             <li class="has-submenu">
                                 <a href="#"><i class="mdi mdi-airplay"></i>关于系统</a>
                                 <ul class="submenu">
-                                    <li><a  href="pages-invoice.html">系统使用指南</a></li>
-                                    <li><a  href="pages-pricing.html">关于我们</a></li>
+                                    <li><a  href="/PYCS/Mainpages/how_to_use.jsp">系统使用指南</a></li>
+                                    
                                 </ul>
                             </li>
                             
@@ -325,18 +321,15 @@ else
                            
 
                             <li class="has-submenu">
-                                <a href="#"><i class="mdi mdi-file-multiple"></i>数据统计</a>
-                                <ul class="submenu">
-                                    <li><a href="pages-invoice.html">诊所收支统计</a></li>
-                                    <li><a href="pages-pricing.html">门诊日志</a></li>
-                                    <li><a href="pages-starter.html">药品销售统计</a></li>
-                                </ul>
+                                <a href="/PYCS/Log_drug_details"><i class="mdi mdi-file-multiple"></i>门诊日志</a>
+                                
                             </li>
+                            
                             <li class="has-submenu">
                                 <a href="#"><i class="mdi mdi-airplay"></i>关于系统</a>
                                 <ul class="submenu">
-                                    <li><a  href="pages-invoice.html">系统使用指南</a></li>
-                                    <li><a  href="pages-pricing.html">关于我们</a></li>
+                                    <li><a  href="/PYCS/Mainpages/how_to_use.jsp">系统使用指南</a></li>
+                                    
                                 </ul>
                             </li>
                             

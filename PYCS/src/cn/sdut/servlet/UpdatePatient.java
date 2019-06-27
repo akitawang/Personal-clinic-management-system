@@ -2,6 +2,8 @@ package cn.sdut.servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -38,7 +40,8 @@ public class UpdatePatient extends HttpServlet {
 		request.setCharacterEncoding("utf-8");
 
 		PrintWriter pw = response.getWriter();
-		
+		SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//设置日期格式
+		String date = df.format(new Date());// new Date()为获取当前系统时间
 		
 		
 		
@@ -53,15 +56,7 @@ public class UpdatePatient extends HttpServlet {
 		 String num=request.getParameter("list");  
 		 int Patient_list=Integer.valueOf(num);
 				
-				System.out.print(Patient_name);
-				System.out.print(Patient_sex);
-				System.out.print(Patient_birth);
-				System.out.print(Patient_weight);
-				System.out.print(Patient_id);
-				System.out.print(Patient_phone);
-				System.out.print(Patient_address);
-				System.out.print(Patient_zt);
-				
+			
 		
 		PatientDAOImpl impl = new PatientDAOImpl();
 		patient data = new patient();
@@ -78,7 +73,11 @@ public class UpdatePatient extends HttpServlet {
 		data.setPatient_zt(Patient_zt);
 	
 		boolean judge = impl.update(data);
-		if(judge) {
+		
+		LogDaoImpl logdao = new LogDaoImpl();
+		boolean d2 = logdao.add_patient_rec(Patient_name,date);
+		
+		if(judge&&d2) {
 			pw.write("<script language='javascript'>alert('修改成功！');if(window.confirm)window.location = '/PYCS/Mainpages/index.jsp';</script>");
 		}
 		else {

@@ -47,7 +47,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="card-box">
-                            <h4 class="m-t-0 header-title">药品添加</h4>
+                            <h4 class="m-t-0 header-title">药品信息修改</h4>
                             <p class="text-muted m-b-30 font-13">
                                 	请准确填写 <code class="highlighter-rouge">药品</code> 的 <code class="highlighter-rouge">名称编号等信息</code>，带有*标记的内容必须填写，其他可不填。
                             </p>
@@ -76,11 +76,11 @@
                                 <div class="form-row">
                                 <div class="form-group col-md-3">
                                         <label for="bloodtype" class="col-form-label">数量(单位：千克)<span class="text-danger">*</span></label>
-                                        <input type="text" class="form-control" value="${p.drug_stock}" id="amount" required name="amount" placeholder="请输入药品数量">
+                                        <input type="text" class="form-control" value="${p.drug_stock}" maxlength="4" id="amount" required name="amount" onkeyup="value=value.replace(/[^\d]/g,'')" placeholder="请输入药品数量">
                                 </div>
                                 <div class="form-group col-md-3">
                                         <label for="bloodtype" class="col-form-label">价格(单位：元)<span class="text-danger">*</span></label>
-                                        <input type="text" class="form-control" value="${p.drug_price}" id="price" required name="price" placeholder="请输入药品价格">
+                                        <input type="text" class="form-control" value="${p.drug_price}" maxlength="6" id="price" required name="price"onkeyup="value=value.replace(/[^\d{1,}\.\d{1,}|\d{1,}]/g,'')"placeholder="请输入药品价格">
                                 </div>
                                 
                               

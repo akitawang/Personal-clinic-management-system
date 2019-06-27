@@ -184,7 +184,7 @@
                                     	<a href="/PYCS/Case_rectify_index?num=${U.case_num}" class="btn btn-primary waves-effect waves-light">
 											<span> 修改该病例</span>
 										</a>
-										<a href="/PYCS/Case_delete?num=${U.case_num}" onclick="return verify()"class="btn btn-danger waves-effect m-l-5">
+										<a href="/PYCS/Case_delete?num=${U.case_num}&&name=${U.case_name}" onclick="return verify()"class="btn btn-danger waves-effect m-l-5">
 											<span> 删除该病例</span>
 										</a>
                                         

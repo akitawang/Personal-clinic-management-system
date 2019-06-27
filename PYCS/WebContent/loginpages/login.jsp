@@ -112,7 +112,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
  <form action="/PYCS/Admin_login" method="post">
 <div class="form-group mb-3">
-		<input class="form-control" type="text"  name="username" placeholder="请输入学号" required="required" pattern="^[a-zA-Z0-9_]{6,16}$" title="只能是6-11位字母、数字、_" />
+		<input class="form-control" type="text"  name="username" placeholder="请输入用户名" required="required" pattern="^[a-zA-Z0-9_]{6,16}$" title="只能是6-11位字母、数字、_" />
  		</div>
  		<div class="form-group mb-3">
  		<input class="form-control" type="password" name="password" placeholder="请输入密码"  required="required" pattern="^[a-zA-Z0-9_]{6,16}$" title="只能是6-16位字母、数字、_" /> 

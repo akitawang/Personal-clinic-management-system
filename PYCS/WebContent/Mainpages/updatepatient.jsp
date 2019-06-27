@@ -38,18 +38,18 @@
     </head>
 
 
-<%
-response.setContentType("text/html;charset=utf-8");
-request.setCharacterEncoding("utf-8");
-String num = request.getParameter("id2");
-System.out.println(num);
-
-int li=Integer.valueOf(num);
-PatientDAOImpl dao = new PatientDAOImpl();
-patient bean=new patient();
-bean=dao.getOneUser(li);
-
-%>
+			<%
+			response.setContentType("text/html;charset=utf-8");
+			request.setCharacterEncoding("utf-8");
+			String num = request.getParameter("id2");
+			System.out.println(num);
+			
+			int li=Integer.valueOf(num);
+			PatientDAOImpl dao = new PatientDAOImpl();
+			patient bean=new patient();
+			bean=dao.getOneUser(li);
+			
+			%>
 
 
     <body>

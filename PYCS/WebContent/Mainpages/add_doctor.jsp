@@ -153,26 +153,27 @@
         <script src="../assets/js/jquery.core.js"></script>
         <script src="../assets/js/jquery.app.js"></script>
         
-        <!-- Toastr js -->
-        <script src="assets/libs/jquery-toast-plugin/jquery.toast.min.js"></script>
-        <script src="assets/js/jquery.toastr.js"></script>
         
+        <!-- Toastr js -->
+        <script src="/PYCS/assets/libs/jquery-toast-plugin/jquery.toast.min.js"></script>
+        <script src="/PYCS/assets/js/jquery.toastr.js"></script>
 
         <script>
         	
-        	 function verify() {
-        		 
-        		 var isChecked = $('#check').prop('checked');
-        		 if(isChecked){
-        			 return true;
-        		 }
-        		 else{
-        			 alert("请勾选‘我已对上述信息复核’选择框");
-        			 return false;
-        		 }
-        		 
-        		
-        	 }
+        function verify() {
+   		 
+   		 var isChecked = $('#check').prop('checked');
+   		 if(isChecked){
+   			 return true;
+   		 }
+   		 else{
+   			 
+   			 $.NotificationApp.send("发生错误！", "您未勾选‘我已对上述信息复核’选择框", 'top-right', '#bf441d', 'error');
+   			 return false;
+   		 }
+   		 
+   		
+   	 }
         	 
             $(document).ready(function() {
                 // Default Datatable

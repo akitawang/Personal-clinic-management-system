@@ -49,89 +49,49 @@
 	<!-- 导入导航侧边栏 -->
 	<%@include file="/Mainpages/nav.jsp"%>
 
-	<div class="contain1" align="center">
-		<div class="card-box">
-		
-			<c:forEach var="p" varStatus="status" items="${list}">
+            <div class="wrapper">
+            <div class="container-fluid">
+  
+               <div class="row">
+                    <div class="col-12">
+                        <div class="card-box">
+                            <h4 class="header-title">日志信息</h4>
 
-				<div class="row" align="left">
-					<div class="col-sm-6 m-t-20">
-						<h4 class="m-t-0 header-title">药品信息</h4>
-						<dl class="row">
-							<dt class="col-sm-3">药品名称</dt>
-							<dd class="col-sm-9">${p.drug_name}</dd>
+                            <table id="datatable-buttons" class="table table-striped table-bordered dt-responsive nowrap">
+                                <thead>
+                                    <tr>
+                                        <th>序号</th>
+                                        <th>操作对象</th>
+                                        <th>描述</th>
+                                        <th>操作</th>
+                                    </tr>
+                                </thead>
 
-							<dt class="col-sm-3">批准文号</dt>
-							<dd class="col-sm-9">${p.drug_number}</dd>
-
-							<dt class="col-sm-3">药品分类</dt>
-							<dd class="col-sm-9">
-								<p>${p.drug_class}</p>
-
-							</dd>
-
-							<dt class="col-sm-3">药品功效</dt>
-							<dd class="col-sm-9">${p.drug_function}</dd>
-
-							<dt class="col-sm-3 text-truncate">药品说明</dt>
-							<dd class="col-sm-9">${p.drug_instruction}</dd>
-
-							<dt class="col-sm-3">药品生产日期</dt>
-							<dd class="col-sm-9">
-								<dl class="row">
-									<dd class="col-sm-8">${p.drug_date}</dd>
-								</dl>
-							</dd>
-							<dt class="col-sm-3">药品失效日期</dt>
-							<dd class="col-sm-9">
-								<dl class="row">
-									<dd class="col-sm-8">${p.drug_expdate}</dd>
-								</dl>
-							</dd>
-							<dt class="col-sm-3">药品库存</dt>
-							<dd class="col-sm-9">
-								<dl class="row">
-									<dd class="col-sm-8">${p.drug_stock}</dd>
-								</dl>
-							</dd>
-							<dt class="col-sm-3">药品价格</dt>
-							<dd class="col-sm-9">
-								<dl class="row">
-									<dd class="col-sm-8">${p.drug_price}</dd>
-								</dl>
-							</dd>
-							<dt class="col-sm-3"></dt>
-							<dd class="col-sm-9">
-								<dl class="row">
-									<dd class="col-sm-8">
-										<a href="/PYCS/drug_modify_a?id=${p.drug_id}"
-											class="btn btn-info"> <i class="dripicons-document"></i>
-											<span>修改药品信息</span>
+                                <tbody>
+                                <c:forEach var="p" items="${list}" varStatus="status"> 
+                                <tr>
+                                    <td>${p.log_id}</td>
+                                    <td>${p.log_type}</td>
+                                    <td>${p.log_description}</td>
+                                    <td>
+                                   		<a href="/PYCS/Log_del?id=${p.log_id}" class="btn btn-info">
+											<i class="dripicons-document"></i> <span>删除记录</span>
 										</a>
-										<a href="/PYCS/drug_delete_servlet?id=${p.drug_id}&&name=${p.drug_name}" onclick="return sures()"
-											class="btn btn-danger waves-effect m-l-5"> <i class="dripicons-document"></i>
-											<span>删除药品信息</span>
-										</a>
-										
-									</dd>
-								</dl>
-							</dd>
+                                    </td>
+                                </tr>
+                                </c:forEach>
+                           
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <!-- end row -->
 
-						</dl>
-
-					</div>
-
-					<!-- end col-->
-				</div>
-			</c:forEach>
-			<!-- end row -->
-
-		</div>
-
-		<!-- end card-box-->
-
-	</div>
-	<!-- end contain1(from wrapper) -->
+            </div> <!-- end container -->
+        </div>
+        <!-- end wrapper -->
+                   
 
 	<!-- jQuery  -->
 	<script src="/PYCS/assets/libs/jquery/jquery.min.js"></script>
@@ -164,28 +124,24 @@
 	<script src="/PYCS/assets/js/jquery.core.js"></script>
 	<script src="/PYCS/assets/js/jquery.app.js"></script>
 	<script type="text/javascript"> 
-	function sures() 
-	{ 
-		if(confirm('确定继续？'))
-		{ 
-			return true; 
-		}
-		else
-		{ 
-			return false; 
-		} 
-	}
-	</script>
+	$(document).ready(function() {
 
-	<script>
-		$(document).ready(function() {
-			// Default Datatable
-			$('#datatable').DataTable({
-				"pageLength" : 5,
-				"searching" : false,
-				"lengthChange" : false
-			});
-		});
+        // Default Datatable
+        $('#datatable').DataTable({
+            keys: true
+        });
+
+        //Buttons examples
+        var table = $('#datatable-buttons').DataTable({
+            lengthChange: false,
+            buttons: ['copy', 'print']
+        });
+
+        table.buttons().container()
+                .appendTo('#datatable-buttons_wrapper .col-md-6:eq(0)');
+    } );
+
+
 	</script>
 </body>
 </html>

@@ -64,14 +64,14 @@
                                  	本页面显示当前所有挂号的患者信息，您可以通过本页面进行叫号。
                                  	  </p>
 
-<%
-
-PatientDAOImpl dao=new PatientDAOImpl();
-
-List<patient> bean1=null;
-bean1=dao.getAllpatient();
-System.out.print(bean1.size());
-%>
+							<%
+							
+							PatientDAOImpl dao=new PatientDAOImpl();
+							
+							List<patient> bean1=null;
+							bean1=dao.getAllpatient();
+							System.out.print(bean1.size());
+							%>
 
         
 

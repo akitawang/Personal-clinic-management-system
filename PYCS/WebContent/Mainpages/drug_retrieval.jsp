@@ -79,7 +79,7 @@
                                    		<a href="/PYCS/drug_detail_servlet?id=${p.drug_id}" class="btn btn-info">
 											<i class="dripicons-document"></i> <span>详细</span>
 										</a>
-										<a href="/PYCS/cart_servlet_a?id2=${p.drug_id}" class="btn btn-info" onclick="return sures()">
+										<a href="/PYCS/cart_servlet_a?id2=${p.drug_id}&&name=${p.drug_name}" class="btn btn-info" onclick="return sures()">
 											<i class="dripicons-document"></i> <span>售出</span>
 										</a>
                                     
